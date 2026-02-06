@@ -1,0 +1,966 @@
+/* Responsive Improvements for New Visions Website */
+
+/* Hero buttons styling - Desktop */
+.aximo-hero-buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.aximo-call-btn {
+  background: #fff;
+  color: #000;
+  border: 2px solid #fff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 160px;
+  justify-content: center;
+}
+
+.aximo-call-btn:hover {
+  background: transparent;
+  color: #fff;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.aximo-video-btn {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 160px;
+  justify-content: center;
+}
+
+.aximo-video-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.aximo-call-btn i,
+.aximo-video-btn i {
+  font-size: 14px;
+}
+
+/* Base responsive typography */
+@media (max-width: 768px) {
+  html {
+    font-size: 16px; /* Increased from 14px for better readability */
+  }
+  
+  body {
+    font-size: 16px; /* Increased from 14px for better readability */
+    line-height: 1.6; /* Increased from 1.5 for better readability */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Ensure all text elements are readable */
+  p, span, div, li, td, th, label {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    min-height: 1.6em;
+  }
+  
+  /* Headings mobile readability */
+  h1, .h1 {
+    font-size: clamp(32px, 8vw, 48px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.5px;
+  }
+  
+  h2, .h2 {
+    font-size: clamp(28px, 7vw, 40px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.3px;
+  }
+  
+  h3, .h3 {
+    font-size: clamp(22px, 5vw, 28px) !important;
+    line-height: 1.4 !important;
+  }
+  
+  h4, .h4 {
+    font-size: clamp(18px, 4vw, 22px) !important;
+    line-height: 1.4 !important;
+  }
+  
+  h5, .h5 {
+    font-size: clamp(16px, 3.5vw, 20px) !important;
+    line-height: 1.5 !important;
+  }
+  
+  h6, .h6 {
+    font-size: clamp(15px, 3vw, 18px) !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Small text should still be readable */
+  small, .small {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Links and buttons */
+  a {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  button, .btn, .aximo-default-btn {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    padding: 14px 24px !important;
+  }
+}
+
+/* Navigation Improvements */
+@media (max-width: 991px) {
+  .site-navbar {
+    padding: 10px 0;
+  }
+  
+  .brand-logo img {
+    height: 35px !important;
+  }
+  
+  .mobile-menu-trigger {
+    margin-left: 20px !important;
+  }
+}
+
+/* Hero Section Responsive */
+@media (max-width: 768px) {
+  .aximo-hero-section {
+    padding: 60px 0 40px;
+  }
+  
+  .aximo-hero-content h1 {
+    font-size: 36px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+  }
+  
+  /* French language specific styling for hero title */
+  [data-lang="fr"] .aximo-title-animation,
+  .aximo-title-animation[data-website-translate="heroTitle"] {
+    font-size: 40px !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.5px;
+  }
+  
+  /* Hero buttons mobile adjustments */
+  .aximo-hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .aximo-call-btn,
+  .aximo-video-btn {
+    width: auto;
+    min-width: 200px;
+    max-width: 280px;
+    padding: 15px 25px;
+    font-size: 16px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .aximo-hero-content p {
+    font-size: 16px !important;
+    margin-bottom: 25px;
+  }
+  
+  .aximo-hero-user-wrap {
+    margin-bottom: 25px;
+  }
+  
+  .aximo-hero-user-thumb {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .aximo-hero-user-thumb-item {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .aximo-hero-user-thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .aximo-hero-thumb {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .aximo-hero-thumb img {
+    max-width: 80%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .aximo-hero-content h1 {
+    font-size: 32px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 20px;
+    letter-spacing: -0.3px;
+  }
+  
+  /* French language specific styling for smaller screens */
+  [data-lang="fr"] .aximo-title-animation,
+  .aximo-title-animation[data-website-translate="heroTitle"] {
+    font-size: 34px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.3px;
+  }
+  
+  .aximo-call-btn,
+  .aximo-video-btn {
+    padding: 14px 25px;
+    font-size: 15px;
+    width: auto;
+    min-width: 180px;
+    max-width: 260px;
+    text-align: left;
+  }
+  
+  .aximo-hero-content p {
+    font-size: 14px !important;
+  }
+}
+
+/* Trust Bar Responsive */
+@media (max-width: 768px) {
+  .trustbar {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .trustbar .logos {
+    padding: 30px 0;
+  }
+  
+  .trustbar .logo-group {
+    gap: 3rem;
+  }
+  
+  .trustbar img {
+    height: clamp(18px, 3vw, 25px);
+  }
+}
+
+/* Services Section Responsive */
+@media (max-width: 768px) {
+  .section_home-hero-process {
+    padding: 60px 0 !important;
+  }
+  
+  .text-5xl-process {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .text-lg-process {
+    font-size: 16px !important;
+  }
+  
+  .padding-section-large {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+/* Case Studies Responsive Improvements */
+@media (max-width: 768px) {
+  .case-studies-section {
+    padding: 60px 0 !important;
+  }
+  
+  .case-studies-header h2 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 15px;
+  }
+  
+  .case-studies-header p {
+    font-size: 14px !important;
+    margin-bottom: 30px;
+  }
+  
+  .case-studies-grid {
+    gap: 20px !important;
+  }
+  
+  .case-study-card {
+    margin-bottom: 20px;
+    height: auto !important;
+    min-height: 300px;
+  }
+  
+  .case-study-content {
+    padding: 16px !important;
+  }
+  
+  .case-study-content h3 {
+    font-size: 18px !important;
+    margin-bottom: 8px;
+  }
+  
+  .case-study-content .category {
+    font-size: 12px !important;
+  }
+  
+  .case-study-metrics {
+    gap: 15px !important;
+  }
+  
+  .metric h4 {
+    font-size: 16px !important;
+  }
+  
+  .metric p {
+    font-size: 11px !important;
+  }
+  
+  .metrics {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  
+  .metrics > div {
+    text-align: center;
+  }
+  
+  /* Case Studies Filter Buttons */
+  .filter-buttons {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-bottom: 30px !important;
+  }
+  
+  .filter-btn {
+    margin: 4px !important;
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+    min-width: auto !important;
+  }
+}
+
+/* Case Study Cards Grid */
+@media (max-width: 991px) {
+  .case-study-card {
+    margin-bottom: 20px !important;
+  }
+  
+  .case-study-image {
+    height: 180px !important;
+  }
+  
+  .case-study-badge {
+    font-size: 11px !important;
+    padding: 4px 8px !important;
+  }
+}
+
+/* Large Case Study Card (Huile Zaman) */
+@media (max-width: 991px) {
+  .col-lg-8 .case-study-card {
+    height: auto !important;
+  }
+  
+  .col-lg-8 .case-study-card > div {
+    flex-direction: column !important;
+  }
+  
+  .col-lg-8 .case-study-image {
+    width: 100% !important;
+    height: 200px !important;
+  }
+  
+  .col-lg-8 .case-study-content {
+    padding: 20px !important;
+  }
+  
+  .col-lg-8 .metrics {
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    gap: 20px !important;
+  }
+}
+
+/* CTA Section Responsive */
+@media (max-width: 768px) {
+  .case-study-cta {
+    height: auto !important;
+    min-height: 280px !important;
+    padding: 20px !important;
+  }
+  
+  .case-study-cta h3 {
+    font-size: 20px !important;
+    margin-bottom: 12px;
+  }
+  
+  .case-study-cta p {
+    font-size: 13px !important;
+    margin-bottom: 20px;
+  }
+  
+  .case-study-cta a {
+    font-size: 13px !important;
+    padding: 10px 20px !important;
+  }
+  
+  .case-study-cta .icon {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 20px !important;
+  }
+}
+
+/* CTA Card in Case Studies */
+@media (max-width: 991px) {
+  .case-study-cta {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .case-study-cta h3 {
+    font-size: 20px !important;
+  }
+  
+  .case-study-cta p {
+    font-size: 13px !important;
+  }
+}
+
+/* General Container Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .padding-global {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .padding-global {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Button Responsive */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 14px;
+    padding: 12px 20px;
+    min-width: auto;
+  }
+  
+  .log-in-btn {
+    width: 140px;
+    height: 45px;
+    font-size: 14px;
+    margin-left: 15px;
+  }
+}
+
+/* Form Elements Responsive */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px;
+  }
+}
+
+/* Utility Classes for Responsive */
+@media (max-width: 768px) {
+  .mobile-center {
+    text-align: center !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  .mobile-block {
+    display: block !important;
+  }
+}
+
+/* Tablet Specific Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .aximo-hero-content h1 {
+    font-size: 36px !important;
+  }
+  
+  .case-studies-header h2 {
+    font-size: 36px !important;
+  }
+  
+  .text-5xl-process {
+    font-size: 40px !important;
+  }
+}
+
+/* Large Mobile Landscape */
+@media (max-width: 768px) and (orientation: landscape) {
+  .aximo-hero-section {
+    padding: 40px 0 30px;
+  }
+  
+  .aximo-hero-content h1 {
+    font-size: 26px !important;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .case-study-card:hover {
+    transform: none;
+  }
+  
+  .case-study-cta:hover {
+    transform: none;
+  }
+  
+  .filter-btn:hover {
+    background: inherit !important;
+    color: inherit !important;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .brand-logo img,
+  .aximo-hero-thumb img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Pricing Section Responsive */
+@media (max-width: 768px) {
+  .pricing-header-text {
+    padding: 0 15px !important;
+    margin-bottom: 40px !important;
+  }
+  
+  .pricing-header-text p {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .pricing-cards-container {
+    padding: 0 15px !important;
+    gap: 20px !important;
+  }
+  
+  .pricing-card {
+    margin-bottom: 30px !important;
+    padding: 20px !important;
+  }
+  
+  .pricing-card-header h3 {
+    font-size: 20px !important;
+  }
+  
+  .pricing-card .price {
+    font-size: 28px !important;
+  }
+  
+  .pricing-card .plan-description {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+  
+  .features-list {
+    padding-left: 0 !important;
+  }
+  
+  .features-list li {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .get-started-btn {
+    padding: 12px 20px !important;
+    font-size: 16px !important;
+    margin: 20px 0 !important;
+  }
+  
+  /* Guarantee Box Responsive */
+  .pricing-header-text > div {
+    margin: 20px 10px !important;
+    padding: 15px !important;
+    max-width: 100% !important;
+  }
+  
+  .pricing-header-text > div h3 {
+    font-size: 18px !important;
+  }
+  
+  .pricing-header-text > div p {
+    font-size: 14px !important;
+  }
+  
+  /* Most Popular Badge */
+  .popular-badge {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-cards-container {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .pricing-card {
+    padding: 15px !important;
+  }
+  
+  .pricing-card .price {
+    font-size: 24px !important;
+  }
+  
+  .features-list li {
+    font-size: 13px !important;
+  }
+}
+
+/* ============================================
+   COMPREHENSIVE MOBILE TYPOGRAPHY IMPROVEMENTS
+   Optimized for mobile-first approach
+   ============================================ */
+
+/* Base mobile typography - minimum 16px to prevent iOS zoom */
+@media (max-width: 768px) {
+  /* Ensure all body text is readable */
+  body, p, span, div, li, td, th, label, input, textarea, select, button, a {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Paragraphs and body text */
+  p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 16px !important;
+  }
+  
+  /* Headings responsive sizes */
+  h1 {
+    font-size: clamp(28px, 8vw, 48px) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 16px !important;
+  }
+  
+  h2 {
+    font-size: clamp(24px, 7vw, 40px) !important;
+    line-height: 1.3 !important;
+    margin-bottom: 14px !important;
+  }
+  
+  h3 {
+    font-size: clamp(20px, 6vw, 32px) !important;
+    line-height: 1.3 !important;
+    margin-bottom: 12px !important;
+  }
+  
+  h4 {
+    font-size: clamp(18px, 5vw, 24px) !important;
+    line-height: 1.4 !important;
+    margin-bottom: 10px !important;
+  }
+  
+  h5 {
+    font-size: clamp(16px, 4vw, 20px) !important;
+    line-height: 1.4 !important;
+  }
+  
+  h6 {
+    font-size: clamp(14px, 3vw, 18px) !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Problem Section Mobile Adjustments */
+  .problem-section h2 {
+    font-size: clamp(28px, 8vw, 48px) !important;
+    line-height: 1.3 !important;
+  }
+  
+  .problem-section p {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
+  
+  /* Video Testimonials Section */
+  .aximo-section-title h2 {
+    font-size: clamp(28px, 8vw, 48px) !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Services Section Mobile */
+  .services-simple h2 {
+    font-size: clamp(28px, 8vw, 42px) !important;
+    line-height: 1.3 !important;
+  }
+  
+  .services-simple h3 {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.4 !important;
+  }
+  
+  .services-simple p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Comparison Section Mobile */
+  .comparison-section h2 {
+    font-size: clamp(24px, 7vw, 40px) !important;
+    line-height: 1.3 !important;
+  }
+  
+  .comparison-section p,
+  .comparison-section li {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Process Section Mobile */
+  .text-5xl-process {
+    font-size: clamp(24px, 7vw, 36px) !important;
+    line-height: 1.3 !important;
+  }
+  
+  .text-lg-process {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Stats/Counter Section Mobile */
+  .aximo-counter-number {
+    font-size: clamp(32px, 8vw, 48px) !important;
+    line-height: 1.2 !important;
+  }
+  
+  .aximo-counter-data p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Case Studies Mobile */
+  .case-studies-header h2 {
+    font-size: clamp(24px, 7vw, 36px) !important;
+    line-height: 1.3 !important;
+  }
+  
+  .case-studies-header p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Quiz/Form Section Mobile */
+  section[style*="quiz"] h2,
+  #quiz-section h2 {
+    font-size: clamp(24px, 7vw, 36px) !important;
+    line-height: 1.3 !important;
+  }
+  
+  section[style*="quiz"] p,
+  #quiz-section p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FAQ Section Mobile */
+  #faq h2 {
+    font-size: clamp(24px, 7vw, 36px) !important;
+  }
+  
+  .aximo-accordion-wrap h3,
+  .aximo-accordion-wrap h4 {
+    font-size: clamp(18px, 5vw, 24px) !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Footer Mobile */
+  .aximo-footer-section h2,
+  .aximo-footer-section h4 {
+    font-size: clamp(20px, 6vw, 28px) !important;
+    line-height: 1.3 !important;
+  }
+  
+  .aximo-footer-section p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* All buttons and CTAs */
+  button, .btn, a.btn, .aximo-default-btn, 
+  .hero-primary-cta, .problem-cta-btn, .get-started-btn {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    padding: 14px 24px !important;
+    min-height: 48px !important;
+  }
+  
+  /* Links */
+  a {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Lists */
+  ul li, ol li {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 10px !important;
+  }
+  
+  /* Form elements - critical for mobile */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"],
+  textarea,
+  select {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    padding: 12px 16px !important;
+    min-height: 48px !important;
+  }
+  
+  /* Labels */
+  label {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Small text adjustments */
+  small, .small {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Badge text */
+  .badge, [class*="badge"] {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* Extra small devices (phones in portrait) */
+@media (max-width: 480px) {
+  body {
+    font-size: 16px !important;
+  }
+  
+  p {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 14px !important;
+  }
+  
+  h1 {
+    font-size: clamp(26px, 9vw, 42px) !important;
+    line-height: 1.25 !important;
+  }
+  
+  h2 {
+    font-size: clamp(22px, 8vw, 36px) !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3 {
+    font-size: clamp(20px, 7vw, 28px) !important;
+    line-height: 1.35 !important;
+  }
+  
+  /* Increase spacing for better readability */
+  section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  /* Problem section numbers */
+  .problem-section [style*="font-size: 48px"] {
+    font-size: clamp(32px, 10vw, 48px) !important;
+  }
+  
+  /* Testimonial text */
+  .testimonial-card-new p,
+  [class*="testimonial"] p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+}
+
+/* Touch-optimized text sizing */
+@media (max-width: 768px) and (hover: none) {
+  /* Slightly larger touch targets for text */
+  button, a.btn, .btn {
+    font-size: 17px !important;
+    padding: 16px 28px !important;
+  }
+  
+  input, textarea, select {
+    font-size: 17px !important;
+  }
+}

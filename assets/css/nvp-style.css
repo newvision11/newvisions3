@@ -1,0 +1,461 @@
+/* Global Reset & Base - These typically remain global */
+
+ 
+  
+  /* Styles for the NVP Home Page section (content outside the modal) */
+  .nvp-home-page { /* This is the main container for the page content that gets hidden */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    background: #FFFFF5; /* Match body background or make distinct */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 100; /* Below modal overlay */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* For smooth hide if needed */
+    /* text-align: center; */ /* If you want content centered */
+  }
+  .nvp-home-page h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.5rem;
+    color: #000000; /* Dark text */
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  /* Scoping .nvp-start-btn to be within .nvp-home-page */
+  .nvp-home-page .nvp-start-btn {
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
+    background: #000000; /* Dark button */
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .nvp-home-page .nvp-start-btn:hover {
+    background: #000000; /* Dark on hover */
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  
+  
+  /* Modal Overlay Styles */
+  #nvp-modalOverlay { /* ID selector for the overlay itself */
+    display: none; /* Hidden by default, shown by JS */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.65); /* Darker semi-transparent background */
+    z-index: 200; /* Above home page */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 1rem; /* Padding for smaller screens, so modal content doesn't touch edges */
+    overflow-y: auto; /* Allow scrolling if content is too tall */
+  }
+  #nvp-modalOverlay[style*="display: flex"] { /* More specific selector for JS-driven display */
+    display: flex !important;
+  }
+  
+  /* Modal Content Box (within the overlay) */
+  #nvp-modalOverlay .nvp-modal-content {
+    position: relative;
+    background: transparent; /* Form container has its own background */
+    border-radius: 24px;
+    box-shadow: none;
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+  
+  /* Close button for the modal */
+  #nvp-modalOverlay .nvp-close-modal {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    font-size: 2.2rem;
+    color: #fff;
+    background: rgba(0,0,0,0.18);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10; /* Above form content within modal */
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+  #nvp-modalOverlay .nvp-close-modal:hover {
+    background: #fff;
+    color: #000000;
+    transform: scale(1.1);
+  }
+  
+  /* Styles for elements INSIDE the modal form, prefixed with #nvp-modalOverlay */
+  #nvp-modalOverlay .nvp-lang-en,
+  #nvp-modalOverlay .nvp-lang-fr {
+    display: none;
+  }
+  #nvp-modalOverlay .nvp-container[data-lang="en"] .nvp-lang-en {
+    display: inline;
+  }
+  #nvp-modalOverlay .nvp-container[data-lang="fr"] .nvp-lang-fr {
+    display: inline;
+  }
+  
+  #nvp-modalOverlay .nvp-nav-btn .nvp-submit-text {
+    display: none;
+  }
+  #nvp-modalOverlay .nvp-nav-btn .nvp-non-submit {
+    display: inline;
+  }
+  #nvp-modalOverlay #nvp-nextBtn[data-is-submit="true"] .nvp-submit-text {
+    display: inline;
+  }
+  #nvp-modalOverlay #nvp-nextBtn[data-is-submit="true"] .nvp-non-submit {
+    display: none;
+  }
+  
+  #nvp-modalOverlay .nvp-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 0rem; /* Padding is on nvp-form-container */
+  }
+  
+  #nvp-modalOverlay .nvp-form-container {
+    background-color: #000000;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: white;
+    width: 100%;
+  }
+  
+  #nvp-modalOverlay h2 { /* Scoped h2 within the modal */
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color:#fff;
+  }
+  
+  #nvp-modalOverlay .nvp-progress-bar {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  #nvp-modalOverlay .nvp-progress {
+    width: var(--progress, 0%);
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      #4caf50 var(--progress),
+      rgba(255, 255, 255, 0.2) var(--progress)
+    );
+    border-radius: 2px;
+    transition: --progress 0.3s ease;
+  }
+  
+  #nvp-modalOverlay .nvp-step-counter {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  #nvp-modalOverlay .nvp-step {
+    display: none;
+    animation: fadeIn 0.5s ease;
+  }
+  #nvp-modalOverlay .nvp-step.active {
+    display: block;
+  }
+  
+  #nvp-modalOverlay .nvp-language-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  #nvp-modalOverlay .nvp-lang-btn {
+    padding: 1rem 2rem;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  #nvp-modalOverlay .nvp-lang-btn:hover {
+    background: white;
+    color: #0C0C0C;
+  }
+  
+  #nvp-modalOverlay .nvp-input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  #nvp-modalOverlay .nvp-input-group input {
+    width: 100%;
+    padding: 1rem !important; /* Default padding */
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+  }
+  #nvp-modalOverlay .nvp-input-group input:focus { /* For border and outline */
+    border-color: white !important;
+    outline: none;
+  }
+  #nvp-modalOverlay .nvp-input-group label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background: #000000;
+    padding: 0 0.5rem;
+  }
+  #nvp-modalOverlay .nvp-input-group input:focus + label,
+  #nvp-modalOverlay .nvp-input-group input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 0.8rem;
+    color: white;
+    transform: translateY(-50%) scale(0.9);
+    left: 0.75rem;
+  }
+  #nvp-modalOverlay .nvp-input-group input:not(:placeholder-shown) { /* For adjusting padding when label floats */
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  #nvp-modalOverlay .nvp-input-group input:focus { /* For adjusting padding when label floats and input is focused */
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  /* #nvp-modalOverlay .nvp-input-group input:not(:placeholder-shown) + label { 
+    top: 0.5rem; 
+    transform: translateY(0%) scale(0.85); 
+  
+  } */
+  #nvp-modalOverlay .nvp-checkbox-group,
+  #nvp-modalOverlay .nvp-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  #nvp-modalOverlay .nvp-custom-checkbox,
+  #nvp-modalOverlay .nvp-custom-radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.75rem 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    border: 1px solid transparent;
+  }
+  #nvp-modalOverlay .nvp-custom-checkbox:hover,
+  #nvp-modalOverlay .nvp-custom-radio:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  #nvp-modalOverlay .nvp-checkbox-mark,
+  #nvp-modalOverlay .nvp-radio-mark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin-right: 1rem;
+    position: relative;
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    background: rgba(255,255,255,0.06);
+  }
+  #nvp-modalOverlay .nvp-checkbox-mark {
+    border-radius: 6px;
+  }
+  #nvp-modalOverlay .nvp-radio-mark {
+    border-radius: 50%;
+  }
+  #nvp-modalOverlay input[type="checkbox"], /* Hiding native inputs */
+  #nvp-modalOverlay input[type="radio"] {
+    display: none;
+  }
+  #nvp-modalOverlay input[type="checkbox"]:checked + .nvp-checkbox-mark,
+  #nvp-modalOverlay input[type="radio"]:checked + .nvp-radio-mark {
+    border-color: #ff7f51;
+    background-color: #FF6B35;
+    box-shadow: 0 6px 16px rgba(255,107,53,0.35);
+  }
+  #nvp-modalOverlay input[type="checkbox"]:checked + .nvp-checkbox-mark::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid #FFFFFF;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  #nvp-modalOverlay input[type="radio"]:checked + .nvp-radio-mark::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: #0C0C0C;
+    border-radius: 50%;
+  }
+  
+  #nvp-modalOverlay .nvp-navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    gap: 1rem;
+  }
+  #nvp-modalOverlay .nvp-nav-btn {
+    padding: 1rem 2rem;
+    border: none;
+    background-color: white;
+    color: #0C0C0C;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+  }
+  #nvp-modalOverlay .nvp-nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  #nvp-modalOverlay .nvp-nav-btn:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Animations - Keyframes are global */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+  }
+  /* Apply shake animation to elements within the modal */
+  #nvp-modalOverlay .shake {
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  #nvp-modalOverlay .nvp-success-message {
+    display: none;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease;
+  }
+  #nvp-modalOverlay .nvp-whatsapp-btn {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background: #000000;
+    color: #fff !important;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(37,211,102,0.15);
+    transition: background 0.2s;
+  }
+  #nvp-modalOverlay .nvp-whatsapp-btn:hover {
+    background: #000000;
+  }
+  
+  
+  /* Responsive adjustments - selectors inside media queries also need scoping */
+  @media (max-width: 700px) {
+    #nvp-modalOverlay .nvp-modal-content { /* Affects modal box size */
+      max-width: 95vw;
+      padding: 0;
+    }
+    #nvp-modalOverlay .nvp-form-container { /* Affects form padding inside modal */
+      padding: 1.5rem;
+    }
+    #nvp-modalOverlay h2 {
+      font-size: 1.5rem;
+    }
+    #nvp-modalOverlay .nvp-lang-btn,
+    #nvp-modalOverlay .nvp-nav-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.9rem;
+    }
+    #nvp-modalOverlay .nvp-close-modal { /* Affects close button position/size */
+      top: 10px;
+      right: 10px;
+      font-size: 1.8rem;
+      width: 36px;
+      height: 36px;
+    }
+  
+    /* Responsive styles for home page elements (outside modal) */
+    .nvp-home-page h1 {
+      font-size: 1.8rem;
+    }
+    .nvp-home-page .nvp-start-btn {
+      font-size: 1.1rem;
+      padding: 1rem 2.5rem;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    #nvp-modalOverlay .nvp-form-container {
+      padding: 1rem;
+    }
+    #nvp-modalOverlay h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    #nvp-modalOverlay .nvp-lang-btn,
+    #nvp-modalOverlay .nvp-nav-btn {
+      padding: 0.7rem 1rem;
+      font-size: 0.85rem;
+    }
+    #nvp-modalOverlay .nvp-navigation-buttons {
+      flex-direction: column; /* Stack buttons on very small screens */
+    }
+  }
+  

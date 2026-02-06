@@ -1,0 +1,181 @@
+/* Language Switcher Component Styles */
+.language-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  padding: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Header integrated language switcher */
+.header-language-switcher {
+  position: static;
+  background: transparent;
+  border-radius: 25px;
+  padding: 8px;
+  box-shadow: none;
+  backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.language-switcher:hover {
+  background: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.language-switcher-btn {
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 2px;
+  border-radius: 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.language-switcher-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000000;
+}
+
+.language-switcher-btn.active {
+  background: #000000;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.language-switcher-btn.active:hover {
+  background: #000000;
+}
+
+/* Header language switcher button styles for dark background */
+.header-language-switcher .language-switcher-btn {
+  color: #FFFFFF;
+}
+
+.header-language-switcher .language-switcher-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.header-language-switcher .language-switcher-btn.active {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+/* Hide fixed language switcher completely since we use header version */
+.language-switcher {
+  display: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .language-switcher-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile header language switcher positioning */
+@media (max-width: 991px) {
+  .header-language-switcher {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding: 4px;
+  }
+  
+  .header-language-switcher .language-switcher-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 0 1px;
+  }
+  
+  /* Ensure navbar layout works without mobile menu trigger */
+  .site-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .menu-block-wrapper {
+    display: none;
+  }
+}
+
+/* Hide on very small screens to avoid interference */
+@media (max-width: 480px) {
+  .language-switcher {
+    top: 10px;
+    right: 10px;
+    padding: 4px;
+  }
+  
+  .language-switcher-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+  
+  .header-language-switcher .language-switcher-btn {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
+
+/* Animation for language change */
+.language-change-animation {
+  animation: languageChangeFlash 0.5s ease;
+}
+
+@keyframes languageChangeFlash {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Integration with existing popup styles */
+.modal-overlay .language-switcher {
+  position: absolute;
+  top: 15px;
+  right: 60px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .language-switcher {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .language-switcher:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+  
+  .language-switcher-btn {
+    color: #FFFFFF;
+  }
+  
+  .language-switcher-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  }
+  
+  .language-switcher-btn.active {
+    background: #FFFFFF;
+  color: #000000;
+  }
+}
