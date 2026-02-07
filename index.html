@@ -3,97 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var videos = document.querySelectorAll('#videoContainer video');
-      function hydrate(video) {
-        if (!video || video.dataset.loaded) return;
-        if (video.dataset.src) {
-          var srcEl = document.createElement('source');
-          srcEl.src = video.dataset.src;
-          srcEl.type = 'video/mp4';
-          video.appendChild(srcEl);
-          video.dataset.loaded = 'true';
-          video.setAttribute('muted', '');
-          video.setAttribute('playsinline', '');
-          video.loop = true;
-          video.autoplay = true;
-          video.controls = false;
-          if (typeof video.load === 'function') { video.load(); }
-          video.addEventListener('canplay', function () { try { video.play().catch(function () { }); } catch (e) { } }, { once: true });
-        }
-      }
-      if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              hydrate(entry.target);
-              io.unobserve(entry.target);
-            }
-          });
-        }, { rootMargin: '200px 0px' });
-        videos.forEach(function (v) { io.observe(v); });
-      } else {
-        videos.forEach(hydrate);
-      }
-      var triggerPlayAll = function () { videos.forEach(function (v) { try { v.play().catch(function () { }); } catch (e) { } }); };
-      window.addEventListener('touchstart', triggerPlayAll, { once: true, passive: true });
-      window.addEventListener('pointerdown', triggerPlayAll, { once: true, passive: true });
-    });
-  </script>
-
-  <style>
-    /* Hide video controls completely */
-    #videoContainer video::-webkit-media-controls {
-      display: none !important;
-    }
-
-    #videoContainer video::-webkit-media-controls-enclosure {
-      display: none !important;
-    }
-
-    #videoContainer video::-webkit-media-controls-panel {
-      display: none !important;
-    }
-
-    #videoContainer video::-webkit-media-controls-play-button {
-      display: none !important;
-    }
-
-    #videoContainer video::-webkit-media-controls-timeline {
-      display: none !important;
-    }
-
-    #videoContainer video::-webkit-media-controls-current-time-display {
-      display: none !important;
-    }
-
-    #videoContainer video::-webkit-media-controls-time-remaining-display {
-      display: none !important;
-    }
-
-    #videoContainer video::-webkit-media-controls-mute-button {
-      display: none !important;
-    }
-
-    #videoContainer video::-webkit-media-controls-volume-slider {
-      display: none !important;
-    }
-
-    #videoContainer video::-webkit-media-controls-fullscreen-button {
-      display: none !important;
-    }
-
-    /* Prevent user interaction with videos */
-    #videoContainer video {
-      pointer-events: none;
-      user-select: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      background-color: #000000;
-    }
-  </style>
   <style>
     body {
       background-color: #000000;
@@ -191,10 +100,6 @@
   <meta name="twitter:description" content="Digital Marketing Agency in Morocco for E-commerce & Local Businesses." />
   <meta name="twitter:image" content="https://newvisions.ma/assets/images/ogimage1.jpg" />
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-
   <script>
     (function () {
       const preferredLang = localStorage.getItem('nvp_preferred_language') || 'en';
@@ -257,15 +162,6 @@
     href="https://fonts.googleapis.com/css2?family=Arimo:wght@600;700&family=Familjen+Grotesk:wght@600;700&family=Inter:wght@400;600&family=Libre+Baskerville:wght@700&family=Syne:wght@600;700&display=swap"
     media="print" onload="this.media='all'">
 
-  <style>
-    @font-face {
-      font-family: 'remixicon';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url('https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.woff2') format('woff2');
-    }
-  </style>
 
   <link rel="preload" href="assets/css/bootstrap.min.css" as="style">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="all">
@@ -286,9 +182,6 @@
   <link rel="stylesheet" href="assets/css/magnific-popup.css" media="print" onload="this.media='all'">
   <link rel="preload" href="assets/css/swiper-bundle.min.css" as="style">
   <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" media="print" onload="this.media='all'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" as="style">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" media="print"
-    onload="this.media='all'">
 
   <style>
     /* Navbar Logo Fix */
@@ -1595,19 +1488,17 @@
               <!-- Headline -->
               <h1>
                 <span class="aximo-title-animation" data-website-translate="heroTitle">
-                  90% of COD stores stay stuck at <span class="gold-gradient-text">10 orders per day.</span>
+                  You're running ads.<br>Where are the <span class="gold-gradient-text">sales?</span>
                 </span>
               </h1>
 
               <!-- Subheadline -->
-              <p class="hero-subtitle" data-website-translate="heroSubtitle" style="display: none;">The 'Boost' button
-                gives you likes, not
-                money. We replace the DIY mess with real ad campaigns built to generate direct sales on your site.</p>
+              <p class="hero-subtitle" data-website-translate="heroSubtitle">Clicks, messages, visits — but no consistent orders. We build the system that turns your ad spend into confirmed COD sales.</p>
 
               <!-- CTA Button -->
               <div class="aximo-hero-buttons">
                 <a class="hero-primary-cta" href="#quiz-section">
-                  <span data-website-translate="startQuiz">Obtenez votre audit COD gratuit</span>
+                  <span data-website-translate="startQuiz">Get Your Free COD Audit</span>
                 </a>
               </div>
             </div>
@@ -2560,14 +2451,13 @@
               <!--<span style="font-size: 20px; font-weight: 800; color: #FF6B35; font-family: 'Syne', sans-serif;">Ce que vous vivez vraiment</span>-->
               <!--<span style="font-size: 16px; color: #999;">→</span>-->
               <span style="font-size: 20px; font-weight: 800; color: #666; font-family: 'Syne', sans-serif;"
-                data-website-translate="problemtitle1">Ce que vous vivez vraiment</span>
+                data-website-translate="problemtitle1">Sound familiar?</span>
             </div>
             <h2
               style="color: #ffffff; font-size: clamp(28px, 7vw, 64px); font-weight: 800; margin: 0; font-family: 'Syne', sans-serif; line-height: 1.2; letter-spacing: -0.5px;"
-              data-website-translate="problemTitle">Vous lancez des publicités. Mais les ventes ne suivent pas.</h2>
+              data-website-translate="problemTitle">You run ads. But the sales don't follow.</h2>
             <p style="color: rgba(255,255,255,0.7); font-size: 18px; max-width: 760px; margin: 14px auto 0;"
-              data-website-translate="problemdesc">Les clics arrivent. Parfois des messages. Parfois des visites.
-              Mais quelque chose ne tourne pas rond.
+              data-website-translate="problemdesc">The clicks come in. Sometimes messages. Sometimes visits. But something isn't right.
             </p>
           </div>
 
@@ -2579,11 +2469,7 @@
                 style="width: 40px; height: 40px; border-radius: 10px; background: #131316; display: flex; align-items: center; justify-content: center; color: #FFE757; font-weight: 800;">
                 01</div>
               <p style="color: rgba(255,255,255,0.9); font-size: 18px; line-height: 1.7; margin: 0;"
-                data-website-translate="problemText1">Les gens cliquent…
-                mais n’achètent pas.
-
-                Ils visitent votre site, regardent, puis partent.
-                Ou écrivent en message, demandent le prix, puis disparaissent.</p>
+                data-website-translate="problemText1">People click but don't buy. They visit your site, scroll around, then leave. Or they message you, ask the price, and disappear.</p>
             </div>
             <div
               style="display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; padding: 22px; border: 1px solid #222; border-radius: 14px; background: #0e0e10;">
@@ -2591,12 +2477,7 @@
                 style="width: 40px; height: 40px; border-radius: 10px; background: #131316; display: flex; align-items: center; justify-content: center; color: #FF6B35; font-weight: 800;">
                 02</div>
               <p style="color: rgba(255,255,255,0.9); font-size: 18px; line-height: 1.7; margin: 0;"
-                data-website-translate="problemText2">Les ventes sont irrégulières.
-                Un jour ça marche.
-                Le lendemain, rien.
-
-                Aucune stabilité.
-              </p>
+                data-website-translate="problemText2">Sales are inconsistent. One day it works. The next day, nothing. No pattern. No stability. Just hoping tomorrow will be better.</p>
             </div>
             <div
               style="display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; padding: 22px; border: 1px solid #222; border-radius: 14px; background: #0e0e10;">
@@ -2604,36 +2485,17 @@
                 style="width: 40px; height: 40px; border-radius: 10px; background: #131316; display: flex; align-items: center; justify-content: center; color: #FFE757; font-weight: 800;">
                 03</div>
               <p style="color: rgba(255,255,255,0.95); font-size: 18px; line-height: 1.7; margin: 0; font-weight: 600;"
-                data-website-translate="problemText3">Vous regardez les chiffres,
-                mais ils ne racontent pas toute l’histoire.
-
-                Vous ne savez pas vraiment
-                si le problème vient de la pub,
-                du site,
-                ou du parcours.
-              </p>
+                data-website-translate="problemText3">You look at the numbers but they don't tell the full story. Is it the ad? The website? The checkout flow? You're spending money without knowing where it's actually breaking.</p>
             </div>
           </div>
 
           <div
             style="text-align: center; padding: 28px; border: 1px solid #333; border-radius: 16px; background: #0f0f10;">
             <p style="color: #ffffff; font-size: 20px; line-height: 1.5; margin: 0 0 18px 0; font-weight: 700; font-family: 'Syne', sans-serif;"
-              data-website-translate="problemText4">Vous dépensez,
-              sans savoir où ça bloque.
-
-              Publicités.
-              Site.
-              Message.
-              Process de vente.
-
-              Tout semble mélangé.
-
-              Ce n’est pas un manque d’effort.
-              C’est un manque de vision claire sur l’ensemble du système.
-            </p>
+              data-website-translate="problemText4">It's not a lack of effort. It's a lack of a clear system. Ads. Website. Messages. Delivery. Everything is disconnected. We find exactly where it breaks and fix it.</p>
             <a href="#quiz-section" class="problem-cta-btn"
               style="display: inline-flex; align-items: center; gap: 8px; background: #FF6B35; color: #000; padding: 14px 22px; border-radius: 12px; font-weight: 700; border: 1px solid #ff7f51;">
-              <span data-website-translate="problemCTA">Obtenez votre audit COD gratuit</span>
+              <span data-website-translate="problemCTA">Get Your Free COD Audit</span>
               <span style="display: inline-block; font-size: 18px; transition: transform 0.3s ease;">→</span>
             </a>
           </div>
@@ -2786,9 +2648,8 @@
           }
         </style>
 
-        <!-- Scrollable Video Container -->
-        <div style="position: relative; margin-top: 60px;display:none">
-          <!-- Left Arrow -->
+        <!-- Hidden video container removed for cleaner funnel -->
+        <div style="display:none">
           <button id="scrollLeft"
             style="position: absolute; left: -20px; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255,255,255,0.1); border: none; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(10px);">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -2891,25 +2752,6 @@
     </div>
 
 
-    <!-- Instagram Link -->
-    <div style="text-align: center; background: #000000; padding: 50px 0;">
-      <a href="https://www.instagram.com/stories/highlights/18041087111317469/" target="_blank"
-        style="display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: #000000; padding: 12px 24px; border-radius: 60px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); position: relative; overflow: hidden;"
-        onmouseover="this.style.transform='translateY(-5px) scale(1.02)'; this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.35)'"
-        onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.25)'">
-        <div
-          style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent); transition: left 0.6s;">
-        </div>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#000000"
-          style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); z-index: 1; position: relative;">
-          <path
-            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-        </svg>
-        <span data-website-translate="seeMoreFeedback"
-          style="color: #000000; text-shadow: none; letter-spacing: 0.5px; z-index: 1; position: relative;">See More
-          Feedback on Instagram</span>
-      </a>
-    </div>
     </div>
     </div>
     </div>
@@ -2921,11 +2763,11 @@
         <div style="text-align: center; color: #ffffff; margin-bottom: 50px;">
           <h2
             style="font-size: clamp(24px, 7vw, 48px); font-weight: 800; line-height: 1.3; margin-bottom: 16px; font-family: 'Syne', sans-serif; letter-spacing: -0.5px; color: #FFFFFF !important;"
-            data-website-translate="quizCTATitle">Prêt à transformer vos ventes COD ?</h2>
+            data-website-translate="quizCTATitle">Ready to fix your COD sales?</h2>
 
           <p style="font-size: clamp(16px, 3vw, 18px); line-height: 1.7; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 30px;"
             data-website-translate="quizCTADesc">
-            Répondez à 7 questions rapides et recevez un audit personnalisé gratuit.
+            Answer 7 quick questions. Get a free personalized audit showing exactly what's broken and how to fix it.
           </p>
         </div>
 
@@ -4102,14 +3944,13 @@
         <div class="content-wrap">
           <div class="header">
             <div class="success_title is-secondary">
-              <div class="tip-proces-hero" data-website-translate="processBadge">NOTRE SYSTÈME</div>
-              <h2 class="text-5xl-process" data-website-translate="processTitleFull">L'entonnoir marocain en 3 couches
+              <div class="tip-proces-hero" data-website-translate="processBadge">OUR SYSTEM</div>
+              <h2 class="text-5xl-process" data-website-translate="processTitleFull">The 3-Layer Moroccan Funnel
               </h2>
             </div>
             <div class="about-hero_description">
               <div class="text-lg-process text-color-secondary" data-website-translate="processDesc">
-                Nous n'offrons pas de solutions génériques. Nous identifions précisément votre problème, puis nous vous
-                accompagnons pas à pas vers une croissance rentable.
+                We don't offer generic solutions. We identify your exact problem, then guide you step by step to profitable growth.
               </div>
             </div>
           </div>
@@ -4125,12 +3966,9 @@
                 </div>
                 <div class="success_scroll-card-top">
                   <h3 class="text-3xl text-weight-medium" style="font-family: 'Syne', sans-serif;"
-                    data-website-translate="filterTitle">1. Le Filtre (Publicités)</h3>
+                    data-website-translate="filterTitle">1. The Filter (Ads)</h3>
                   <div class="text-base-copy-copy text-color-secondary" data-website-translate="filterDesc">
-                    On arrête de cibler 'tout le monde'. On utilise des hooks en Darija qui qualifient les vrais
-                    acheteurs avant même qu'ils cliquent. Exemples concrets : 'Livraison gratuite partout au Maroc',
-                    'Paiement à la livraison sécurisé', 'Commandez maintenant, payez à la réception'. On économise votre
-                    budget en filtrant les curieux, on garde que les vrais acheteurs qui confirment.
+                    We stop targeting "everyone." We use hooks in Darija that qualify real buyers before they even click. We save your budget by filtering out the curious and keeping only buyers who actually confirm.
                   </div>
                 </div>
               </div>
@@ -4147,12 +3985,9 @@
                     </div>
                   </div>
                   <h3 class="text-3xl text-weight-medium" style="font-family: 'Syne', sans-serif;"
-                    data-website-translate="conversionTitle">2. La Conversion (Store)</h3>
+                    data-website-translate="conversionTitle">2. The Conversion (Store)</h3>
                   <div class="text-base-copy-copy text-color-secondary" data-website-translate="conversionDesc">
-                    Pas de templates génériques. On construit des pages haute-confiance, optimisées COD, conçues pour la
-                    psychologie marocaine. Témoignages en Darija ('7aja 9lila wla7la', 'Mli7 bzzaf'), garanties locales
-                    (retour sous 7 jours), numéros WhatsApp visibles partout. On maximise les confirmations via
-                    WhatsApp, pas juste les clics.
+                    No generic templates. We build high-trust pages optimized for COD and Moroccan buying psychology. Darija testimonials, local guarantees, WhatsApp visible everywhere. We maximize confirmed orders, not just clicks.
                   </div>
                 </div>
               </div>
@@ -4169,13 +4004,10 @@
                     </div>
                   </div>
                   <h3 class="text-3xl text-weight-medium" style="font-family: 'Syne', sans-serif;"
-                    data-website-translate="stabilityTitle">3. La Stabilité (Scaling)</h3>
+                    data-website-translate="stabilityTitle">3. The Stability (Scaling)</h3>
                   <div class="text-base-copy text-color-secondary text-base-copy-copy"
                     data-website-translate="stabilityDesc">
-                    On surveille les données quotidiennement. Si un créatif meurt, on le remplace immédiatement. Si le
-                    taux de confirmation baisse, on ajuste les scripts WhatsApp en Darija. Si les annulations
-                    augmentent, on change la stratégie. On se concentre sur la stabilité du ROAS et des confirmations
-                    réelles, pas sur les likes de vanité qui ne vendent rien.
+                    We monitor data daily. If a creative dies, we replace it immediately. If confirmations drop, we adjust the WhatsApp scripts. We focus on stable ROAS and real confirmations, not vanity metrics that don't sell anything.
                   </div>
                 </div>
               </div>
@@ -4200,73 +4032,6 @@
     </section>
     <!-- End 3-Layer Moroccan Funnel Section -->
 
-    <!-- Video Scroll JavaScript -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const videoContainer = document.getElementById('videoContainer');
-        const scrollLeftBtn = document.getElementById('scrollLeft');
-        const scrollRightBtn = document.getElementById('scrollRight');
-
-        const scrollAmount = 320; // Width of one video card plus gap
-        let autoScrollInterval;
-
-        // Auto-scroll function for infinite loop
-        function startAutoScroll() {
-          autoScrollInterval = setInterval(() => {
-            const maxScroll = videoContainer.scrollWidth - videoContainer.clientWidth;
-            if (videoContainer.scrollLeft >= maxScroll) {
-              // Reset to beginning for infinite loop
-              videoContainer.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-              videoContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }
-          }, 5000); // Auto-scroll every 5 seconds
-        }
-
-        // Stop auto-scroll when user interacts
-        function stopAutoScroll() {
-          clearInterval(autoScrollInterval);
-        }
-
-        // Restart auto-scroll after user interaction
-        function restartAutoScroll() {
-          stopAutoScroll();
-          setTimeout(startAutoScroll, 5000); // Restart after 5 seconds of inactivity
-        }
-
-        // Manual scroll controls
-        scrollLeftBtn.addEventListener('click', function () {
-          stopAutoScroll();
-          const currentScroll = videoContainer.scrollLeft;
-          if (currentScroll <= 0) {
-            // Go to end for infinite loop
-            videoContainer.scrollTo({ left: videoContainer.scrollWidth, behavior: 'smooth' });
-          } else {
-            videoContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-          }
-          restartAutoScroll();
-        });
-
-        scrollRightBtn.addEventListener('click', function () {
-          stopAutoScroll();
-          const maxScroll = videoContainer.scrollWidth - videoContainer.clientWidth;
-          if (videoContainer.scrollLeft >= maxScroll) {
-            // Reset to beginning for infinite loop
-            videoContainer.scrollTo({ left: 0, behavior: 'smooth' });
-          } else {
-            videoContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-          }
-          restartAutoScroll();
-        });
-
-        // Pause auto-scroll on hover
-        videoContainer.addEventListener('mouseenter', stopAutoScroll);
-        videoContainer.addEventListener('mouseleave', restartAutoScroll);
-
-        // Start auto-scroll on page load
-        startAutoScroll();
-      });
-    </script>
 
 
 
@@ -4279,12 +4044,11 @@
           <h2
             style="color: #ffffff; font-size: clamp(26px, 7vw, 64px); font-weight: 700; margin-bottom: 20px; font-family: 'Syne', sans-serif; line-height: 1.3;"
             data-website-translate="servicesTitle">
-            How can we help <span style="font-style: italic; font-weight: 400;">you?</span>
+            How We Help <span style="font-style: italic; font-weight: 400;">You</span>
           </h2>
           <p style="color: rgba(255,255,255,0.75); font-size: clamp(16px, 4vw, 20px); line-height: 1.6;"
             data-website-translate="servicesSubtitle">
-            Meta ads, websites that convert, TikTok growth—we handle everything that keeps your acquisition machine
-            running.
+            We manage your ads, build your store, and test TikTok. No theory. Real work that generates confirmed orders for your business.
           </p>
         </div>
 
@@ -4324,8 +4088,7 @@
                 data-website-translate="metaAdsTitle">Meta Ads</h3>
               <p style="color: rgba(255,255,255,0.95); font-size: clamp(16px, 3vw, 18px); line-height: 1.7;"
                 data-website-translate="metaAdsDesc">
-                Full-funnel Facebook & Instagram systems engineered to protect your COD margins and keep orders
-                confirmed.
+                No more "Boost Post." We structure real campaigns, test creatives daily, and only keep what generates confirmed profit. You know exactly where your budget goes.
               </p>
             </div>
           </div>
@@ -4338,8 +4101,7 @@
               data-website-translate="highConversionTitle">High-Conversion Websites</h3>
             <p style="color: rgba(255,255,255,0.8); font-size: clamp(16px, 3vw, 18px); line-height: 1.7;"
               data-website-translate="highConversionDesc">
-              We design, write, and build ultra-fast stores with persuasive flows, COD logic, and analytics already
-              wired in.
+              Your site looks nice but doesn't sell. We fix that. Ultra-fast stores with COD checkout, trust signals, and WhatsApp integration that turn visitors into confirmed orders.
             </p>
           </div>
 
@@ -4388,8 +4150,7 @@
                 data-website-translate="tiktokAdsTitle">TikTok Ads</h3>
               <p style="color: rgba(255,255,255,0.95); font-size: clamp(16px, 3vw, 18px); line-height: 1.7;"
                 data-website-translate="tiktokAdsDesc">
-                Native-style creatives, spark posts, and rapid testing to hit scale with Gen Z and new audiences in
-                days, not months.
+                Reach new audiences fast with native-style creatives that don't feel like ads. We test rapidly, kill what doesn't work, and scale what does.
               </p>
             </div>
           </div>
@@ -4509,7 +4270,7 @@
               <h2
                 style="font-size: clamp(36px, 10vw, 96px); font-weight: 900; font-family: 'Syne', sans-serif; line-height: 1.2; letter-spacing: -0.02em; color: #1f2937;">
                 <span class="aximo-title-animation" style="font-size: 1.35em; display: inline-block;"
-                  data-website-translate="whyChooseTitle">Why choose us?</span>
+                  data-website-translate="whyChooseTitle">Why choose New Visions?</span>
               </h2>
               <style>
                 @media (max-width: 768px) {
@@ -4523,10 +4284,7 @@
               </h2>
             </div>
             <div class="col-lg-4 offset-lg-1 d-flex align-items-center">
-              <p data-website-translate="whyChooseDesc">At New Visions, we focus on what works—fast websites, smart ads,
-                and content that converts. No fluff,
-                just real results backed by strategy and data.
-              </p>
+              <p data-website-translate="whyChooseDesc">We focus on what actually works. Fast websites. Smart ads. Content that sells. No fluff. Just real results. We've spent $680K in ads for our clients. We know what works in Morocco.</p>
             </div>
           </div>
         </div>
@@ -4635,7 +4393,7 @@
             data-website-translate="comparisonBadge">Comparison</div>
           <h2
             style="color: #ffffff; font-size: clamp(32px, 5vw, 56px); font-weight: 700; margin: 0; font-family: 'Syne', sans-serif;"
-            data-website-translate="comparisonTitle">But, why would you want to work with <span
+            data-website-translate="comparisonTitle">Why work with <span
               style="font-style: italic;">us?</span></h2>
         </div>
 
@@ -4646,7 +4404,7 @@
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 35px;">
                 <h3
                   style="color: #ffffff; font-size: 24px; font-weight: 700; margin: 0; font-family: 'Syne', sans-serif;"
-                  data-website-translate="classicAgenciesTitle">Les Agences Classiques</h3>
+                  data-website-translate="classicAgenciesTitle">Other Agencies</h3>
               </div>
               <ul style="list-style: none; padding: 0; margin: 0;">
                 <li
@@ -4656,8 +4414,8 @@
                       stroke-linejoin="round" />
                   </svg>
                   <div style="color: #ffffff; font-size: 16px; line-height: 1.6;">
-                    <strong style="color: #ffffff;">Approche :</strong> <span
-                      data-website-translate="classicAgencies1">Généralistes (Branding & Visibilité)</span>
+                    <strong style="color: #ffffff;">Approach:</strong> <span
+                      data-website-translate="classicAgencies1">Generalists (Branding & Visibility)</span>
                   </div>
                 </li>
                 <li
@@ -4667,8 +4425,8 @@
                       stroke-linejoin="round" />
                   </svg>
                   <div style="color: #ffffff; font-size: 16px; line-height: 1.6;">
-                    <strong style="color: #ffffff;">Paiement :</strong> <span
-                      data-website-translate="classicAgencies2">Limitées par la dotation & blocages</span>
+                    <strong style="color: #ffffff;">Payment:</strong> <span
+                      data-website-translate="classicAgencies2">Limited by budget caps & blockages</span>
                   </div>
                 </li>
                 <li
@@ -4678,8 +4436,8 @@
                       stroke-linejoin="round" />
                   </svg>
                   <div style="color: #ffffff; font-size: 16px; line-height: 1.6;">
-                    <strong style="color: #ffffff;">Métriques :</strong> <span
-                      data-website-translate="classicAgencies3">Focus sur les Clics, Likes & Vues</span>
+                    <strong style="color: #ffffff;">Metrics:</strong> <span
+                      data-website-translate="classicAgencies3">Focus on Clicks, Likes & Views</span>
                   </div>
                 </li>
                 <li style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 0;">
@@ -4688,8 +4446,8 @@
                       stroke-linejoin="round" />
                   </svg>
                   <div style="color: #ffffff; font-size: 16px; line-height: 1.6;">
-                    <strong style="color: #ffffff;">Gestion :</strong> <span
-                      data-website-translate="classicAgencies4">Processus manuels et lents</span>
+                    <strong style="color: #ffffff;">Process:</strong> <span
+                      data-website-translate="classicAgencies4">Manual and slow processes</span>
                   </div>
                 </li>
               </ul>
@@ -4723,8 +4481,8 @@
                       stroke-linejoin="round" />
                   </svg>
                   <div style="color: #ffffff; font-size: 16px; line-height: 1.6;">
-                    <strong style="color: #ffffff;">Approche :</strong> <span data-website-translate="newVisions1">100%
-                      Spécialisé E-com & COD</span>
+                    <strong style="color: #ffffff;">Approach:</strong> <span data-website-translate="newVisions1">100%
+                      Specialized in E-com & COD</span>
                   </div>
                 </li>
                 <li
@@ -4734,8 +4492,8 @@
                       stroke-linejoin="round" />
                   </svg>
                   <div style="color: #ffffff; font-size: 16px; line-height: 1.6;">
-                    <strong style="color: #ffffff;">Paiement :</strong> <span
-                      data-website-translate="newVisions2">Solutions pour scaler sans blocages</span>
+                    <strong style="color: #ffffff;">Payment:</strong> <span
+                      data-website-translate="newVisions2">Solutions to scale without blockages</span>
                   </div>
                 </li>
                 <li
@@ -4745,8 +4503,8 @@
                       stroke-linejoin="round" />
                   </svg>
                   <div style="color: #ffffff; font-size: 16px; line-height: 1.6;">
-                    <strong style="color: #ffffff;">Métriques :</strong> <span
-                      data-website-translate="newVisions3">Focus sur le Profit Net & ROAS</span>
+                    <strong style="color: #ffffff;">Metrics:</strong> <span
+                      data-website-translate="newVisions3">Focus on Net Profit & ROAS</span>
                   </div>
                 </li>
                 <li style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 0;">
@@ -4755,8 +4513,8 @@
                       stroke-linejoin="round" />
                   </svg>
                   <div style="color: #ffffff; font-size: 16px; line-height: 1.6;">
-                    <strong style="color: #ffffff;">Gestion :</strong> <span
-                      data-website-translate="newVisions4">Systèmes automatisés & rapides</span>
+                    <strong style="color: #ffffff;">Process:</strong> <span
+                      data-website-translate="newVisions4">Automated & fast systems</span>
                   </div>
                 </li>
               </ul>
@@ -4883,257 +4641,6 @@
         });
       });
     </script>
-
-    <!-- Testimonials section will be moved after FAQ -->
-
-    <div class="aximo-auto-slider-section">
-      <div class="swiper aximo-auto-slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="aximo-auto-slider-item">
-              <h3 data-website-translate="yourVisionOurMission">VOTRE VISION, NOTRE MISSION</h3>
-              <img decoding="async" loading="lazy" src="assets/images/v1/star3.png" alt="Star Rating Indicator"
-                width="180" height="167" style="width:5%;height:auto;">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="aximo-auto-slider-item">
-              <h3 data-website-translate="yourVisionOurMission">VOTRE VISION, NOTRE MISSION</h3>
-              <img decoding="async" loading="lazy" src="assets/images/v1/star3.png" alt="Star Rating Indicator"
-                width="180" height="167" style="width:5%;height:auto;">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="aximo-auto-slider-item">
-              <h3 data-website-translate="yourVisionOurMission">VOTRE VISION, NOTRE MISSION</h3>
-              <img decoding="async" loading="lazy" src="assets/images/v1/star3.png" alt="Star Rating Indicator"
-                width="180" height="167" style="width:5%;height:auto;">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="aximo-auto-slider-item">
-              <h3 data-website-translate="yourVisionOurMission">VOTRE VISION, NOTRE MISSION</h3>
-              <img decoding="async" loading="lazy" src="assets/images/v1/star3.png" alt="Star Rating Indicator"
-                width="180" height="167" style="width:5%;height:auto;">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="aximo-auto-slider-item">
-              <h3 data-website-translate="yourVisionOurMission">VOTRE VISION, NOTRE MISSION</h3>
-              <img decoding="async" loading="lazy" src="assets/images/v1/star3.png" alt="Star Rating Indicator"
-                width="180" height="167" style="width:5%;height:auto;">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="aximo-auto-slider-item">
-              <h3 data-website-translate="yourVisionOurMission">VOTRE VISION, NOTRE MISSION</h3>
-              <img decoding="async" loading="lazy" src="assets/images/v1/star3.png" alt="Star Rating Indicator"
-                width="180" height="167" style="width:5%;height:auto;">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="aximo-auto-slider-item">
-              <h3 data-website-translate="yourVisionOurMission">VOTRE VISION, NOTRE MISSION</h3>
-              <img decoding="async" loading="lazy" src="assets/images/v1/star3.png" alt="Star Rating Indicator"
-                width="180" height="167" style="width:5%;height:auto;">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="aximo-auto-slider-item">
-              <h3 data-website-translate="yourVisionOurMission">VOTRE VISION, NOTRE MISSION</h3>
-              <img decoding="async" loading="lazy" src="assets/images/v1/star3.png" alt="" width="180" height="167"
-                style="width:5%;height:auto;">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End section -->
-    <div id="pricing" class="section aximo-section-padding3">
-      <div class="container">
-        <div class="pricing-header-text">
-          <p data-website-translate="pricingIntro">All our packages are designed to fix your sales problem. Choose the
-            one
-            that fits your business, risk-free.</p>
-          <div
-            style="background: linear-gradient(135deg, #000000, #333333); color: #FFFFFF; padding: 20px; border-radius: 15px; margin: 30px auto; max-width: 600px; text-align: center; border: 2px solid #FFFFF5; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-            <h3
-              style="color: #FFFFF5; font-size: 24px; font-weight: 700; margin-bottom: 10px; font-family: 'Syne', sans-serif;"
-              data-website-translate="guaranteeTitle">🛡️ Our Guarantee</h3>
-            <p style="font-size: 18px; font-weight: 600; margin: 0; color: #FFFFF5;"
-              data-website-translate="guaranteeDesc">If you don't see results in your first month, you'll get another
-              month of work — 100% free. No risk, no excuses.</p>
-          </div>
-        </div>
-
-        <div class="pricing-cards-container">
-          <!-- Card 1: Pack Déblocage Ecom -->
-          <div class="pricing-card">
-            <div class="pricing-card-header">
-              <h3 class="plan-name" data-website-translate="pricingPack1Title">Pack Déblocage Ecom</h3>
-              <p class="plan-description" style="margin-top: 12px;" data-website-translate="pricingPack1For">Vendeurs
-                qui font env. 5 ventes/jour mais avec des résultats instables et qui ont besoin d’une stratégie claire
-                et d’un suivi complet pour stabiliser leurs ventes.</p>
-            </div>
-            <div class="features-section">
-              <h4 data-website-translate="pricingPack1What">What we do:</h4>
-              <ul class="features-list">
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack1Feature1">Plan média
-                    personnalisé (Meta ou TikTok)</span></li>
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack1Feature2">Optimisation
-                    quotidienne & scaling</span></li>
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack1Feature3">Gestion
-                    complète des publicités pendant 1 mois</span></li>
-              </ul>
-            </div>
-            <a href="https://wa.me/212639621669?text=Bonjour%20New%20Visions%20👋%20Je%20souhaite%20vérifier%20mon%20éligibilité%20pour%20vos%20packages."
-              class="get-started-btn" style="display: block; margin-top: 20px;"><span
-                data-website-translate="pricingPack1CTA">Vérifier l'éligibilité</span></a>
-          </div>
-
-          <!-- Card 2: Standard Package (Recommended) -->
-          <div class="pricing-card most-popular">
-            <div class="popular-badge" data-website-translate="mostPopular">⭐ Recommandé</div>
-            <div class="pricing-card-header">
-              <h3 class="plan-name" data-website-translate="pricingPack2Title">Standard Package</h3>
-              <p class="plan-description" style="margin-top: 12px;" data-website-translate="pricingPack2For">Vendeurs
-                qui n’ont pas de base solide. Ils veulent un site optimisé pour convertir, une structure publicitaire
-                propre, et un système qui peut commencer à générer des ventes de manière prévisible.</p>
-            </div>
-            <div class="features-section">
-              <h4 data-website-translate="pricingPack1What">What we do:</h4>
-              <ul class="features-list">
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack2Feature1">Site e-com
-                    complet optimisé conversion</span></li>
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack2Feature2">Hébergement et
-                    nom de domaine (.ma .com…)</span></li>
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack2Feature3">Design
-                    professionnel et copywriting</span></li>
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack2Feature4">Setup Meta Ads
-                    (1 mois de campagnes)</span></li>
-              </ul>
-            </div>
-            <a href="https://wa.me/212639621669?text=Bonjour%20New%20Visions%20👋%20Je%20souhaite%20vérifier%20mon%20éligibilité%20pour%20vos%20packages."
-              class="get-started-btn" style="display: block; margin-top: 20px;"><span
-                data-website-translate="pricingPack2CTA">Vérifier l'éligibilité</span></a>
-          </div>
-
-          <!-- Card 3: Full Build & Scale — Partenariat VIP -->
-          <div class="pricing-card">
-            <div class="pricing-card-header">
-              <h3 class="plan-name" data-website-translate="pricingPack3Title">Full Build & Scale — Partenariat VIP</h3>
-              <p class="plan-description" style="margin-top: 12px;" data-website-translate="pricingPack3For">
-                Investisseurs ou débutants qui veulent lancer un business complet, avec accompagnement stratégique et
-                exécution totale.</p>
-            </div>
-            <div class="features-section">
-              <h4 data-website-translate="pricingPack1What">What we do:</h4>
-              <ul class="features-list">
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature1">Site e-com
-                    complet optimisé conversion</span></li>
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature2">Hébergement et
-                    nom de domaine (.ma .com…)</span></li>
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature3">Design
-                    professionnel et copywriting</span></li>
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature4">Gestion
-                    publicitaire complète pendant 3 mois</span></li>
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature5">Retargeting
-                    avancé pour maximiser les conversions</span></li>
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature6">Consultation
-                    individuelle pour planification et stratégie de croissance</span></li>
-                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature7">Automation
-                    pour WhatsApp, website et société de livraison</span></li>
-              </ul>
-            </div>
-            <a href="https://wa.me/212639621669?text=Bonjour%20New%20Visions%20👋%20Je%20souhaite%20vérifier%20mon%20éligibilité%20pour%20vos%20packages."
-              class="get-started-btn" style="display: block; margin-top: 20px;"><span
-                data-website-translate="pricingPack3CTA">Vérifier l'éligibilité</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End section -->
-
-    <!-- Home Page (Landing) -->
-
-
-
-    <!-- CSS Styles -->
-    <style>
-      .testimonials-slider-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 80px;
-      }
-
-      @media (max-width: 768px) {
-        .testimonials-slider-container {
-          padding: 0 20px;
-        }
-
-        .testimonial-nav-btn {
-          display: none !important;
-        }
-
-        .testimonial-set {
-          flex-direction: column !important;
-        }
-
-        .testimonial-set>div {
-          flex: none !important;
-          margin-bottom: 20px;
-        }
-      }
-
-      @media (max-width: 992px) and (min-width: 769px) {
-        .testimonial-set>div:nth-child(3) {
-          display: none;
-        }
-      }
-    </style>
-
-    <!-- Trust indicators -->
-    <div class="row" style="margin-top: 50px;">
-      <div class="col-12">
-
-      </div>
-    </div>
-    </div>
-    </div>
-    <!-- End Modern Testimonials Section -->
-
-    <script>
-      document.addEventListener('contextmenu', e => e.preventDefault());
-
-      // Add hover effects for testimonial cards
-      document.addEventListener('DOMContentLoaded', function () {
-        const testimonialCards = document.querySelectorAll('.modern-testimonial-card');
-
-        testimonialCards.forEach(card => {
-          card.addEventListener('mouseenter', function () {
-            this.style.transform = 'translateY(-10px)';
-            this.style.boxShadow = '0 20px 60px rgba(0,0,0,0.15)';
-          });
-
-          card.addEventListener('mouseleave', function () {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 10px 40px rgba(0,0,0,0.1)';
-          });
-        });
-      });
-    </script>
-
-    </div>
-    </div>
-
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <!-- End Quiz Section -->
-
 
     <!-- Case Studies Section -->
     <section id="case-studies" class="case-studies-section" style="background: #000000; padding: 80px 0;">
@@ -5351,6 +4858,157 @@
       </div>
     </section>
     <!-- End Case Studies Section -->
+    <div id="pricing" class="section aximo-section-padding3">
+      <div class="container">
+        <div class="pricing-header-text">
+          <p data-website-translate="pricingIntro">All our packages are designed to fix your sales problem. Choose the
+            one
+            that fits your business, risk-free.</p>
+          <div
+            style="background: linear-gradient(135deg, #000000, #333333); color: #FFFFFF; padding: 20px; border-radius: 15px; margin: 30px auto; max-width: 600px; text-align: center; border: 2px solid #FFFFF5; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+            <h3
+              style="color: #FFFFF5; font-size: 24px; font-weight: 700; margin-bottom: 10px; font-family: 'Syne', sans-serif;"
+              data-website-translate="guaranteeTitle">🛡️ Our Guarantee</h3>
+            <p style="font-size: 18px; font-weight: 600; margin: 0; color: #FFFFF5;"
+              data-website-translate="guaranteeDesc">If you don't see results in your first month, you'll get another
+              month of work — 100% free. No risk, no excuses.</p>
+          </div>
+        </div>
+
+        <div class="pricing-cards-container">
+          <!-- Card 1: Pack Déblocage Ecom -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <h3 class="plan-name" data-website-translate="pricingPack1Title">Unblock Pack</h3>
+              <p class="plan-description" style="margin-top: 12px;" data-website-translate="pricingPack1For">For stores doing ~5 sales/day with unstable results. You need a clear strategy and full management to stabilize and grow.</p>
+            </div>
+            <div class="features-section">
+              <h4 data-website-translate="pricingPack1What">What we do:</h4>
+              <ul class="features-list">
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack1Feature1">Custom media plan (Meta or TikTok)</span></li>
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack1Feature2">Daily optimization & scaling</span></li>
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack1Feature3">Full ad management for 1 month</span></li>
+              </ul>
+            </div>
+            <a href="https://wa.me/212639621669?text=Bonjour%20New%20Visions%20👋%20Je%20souhaite%20vérifier%20mon%20éligibilité%20pour%20vos%20packages."
+              class="get-started-btn" style="display: block; margin-top: 20px;"><span
+                data-website-translate="pricingPack1CTA">Check Eligibility</span></a>
+          </div>
+
+          <!-- Card 2: Standard Package (Recommended) -->
+          <div class="pricing-card most-popular">
+            <div class="popular-badge" data-website-translate="mostPopular">Most Popular</div>
+            <div class="pricing-card-header">
+              <h3 class="plan-name" data-website-translate="pricingPack2Title">Standard Package</h3>
+              <p class="plan-description" style="margin-top: 12px;" data-website-translate="pricingPack2For">For stores without a solid foundation. You need a conversion-optimized site, clean ad structure, and a system that generates predictable sales.</p>
+            </div>
+            <div class="features-section">
+              <h4 data-website-translate="pricingPack1What">What we do:</h4>
+              <ul class="features-list">
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack2Feature1">Full e-com site optimized for conversions</span></li>
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack2Feature2">Hosting + domain (.ma, .com...)</span></li>
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack2Feature3">Professional design & copywriting</span></li>
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack2Feature4">Meta Ads setup (1 month of campaigns)</span></li>
+              </ul>
+            </div>
+            <a href="https://wa.me/212639621669?text=Bonjour%20New%20Visions%20👋%20Je%20souhaite%20vérifier%20mon%20éligibilité%20pour%20vos%20packages."
+              class="get-started-btn" style="display: block; margin-top: 20px;"><span
+                data-website-translate="pricingPack2CTA">Check Eligibility</span></a>
+          </div>
+
+          <!-- Card 3: Full Build & Scale — Partenariat VIP -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <h3 class="plan-name" data-website-translate="pricingPack3Title">Full Build & Scale — VIP Partnership</h3>
+              <p class="plan-description" style="margin-top: 12px;" data-website-translate="pricingPack3For">For investors or beginners who want to launch a complete business with strategic guidance and total execution.</p>
+            </div>
+            <div class="features-section">
+              <h4 data-website-translate="pricingPack1What">What we do:</h4>
+              <ul class="features-list">
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature1">Full e-com site optimized for conversions</span></li>
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature2">Hosting + domain (.ma, .com...)</span></li>
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature3">Professional design & copywriting</span></li>
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature4">Full ad management for 3 months</span></li>
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature5">Advanced retargeting to maximize conversions</span></li>
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature6">1-on-1 strategy consultation & growth planning</span></li>
+                <li><span class="check-icon">✓</span> <span data-website-translate="pricingPack3Feature7">WhatsApp, website & delivery automation</span></li>
+              </ul>
+            </div>
+            <a href="https://wa.me/212639621669?text=Bonjour%20New%20Visions%20👋%20Je%20souhaite%20vérifier%20mon%20éligibilité%20pour%20vos%20packages."
+              class="get-started-btn" style="display: block; margin-top: 20px;"><span
+                data-website-translate="pricingPack3CTA">Check Eligibility</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End section -->
+
+    <!-- Home Page (Landing) -->
+
+
+
+    <!-- CSS Styles -->
+    <style>
+      .testimonials-slider-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 80px;
+      }
+
+      @media (max-width: 768px) {
+        .testimonials-slider-container {
+          padding: 0 20px;
+        }
+
+        .testimonial-nav-btn {
+          display: none !important;
+        }
+
+        .testimonial-set {
+          flex-direction: column !important;
+        }
+
+        .testimonial-set>div {
+          flex: none !important;
+          margin-bottom: 20px;
+        }
+      }
+
+      @media (max-width: 992px) and (min-width: 769px) {
+        .testimonial-set>div:nth-child(3) {
+          display: none;
+        }
+      }
+    </style>
+
+    </div>
+    </div>
+    <!-- End Modern Testimonials Section -->
+
+    <script>
+      // Add hover effects for testimonial cards
+      document.addEventListener('DOMContentLoaded', function () {
+        const testimonialCards = document.querySelectorAll('.modern-testimonial-card');
+
+        testimonialCards.forEach(card => {
+          card.addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 20px 60px rgba(0,0,0,0.15)';
+          });
+
+          card.addEventListener('mouseleave', function () {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 10px 40px rgba(0,0,0,0.1)';
+          });
+        });
+      });
+    </script>
+
+    </div>
+    </div>
+    <!-- End Quiz Section -->
+
+
 
     <!-- FAQ Section -->
     <div id="faq" class="section aximo-section-padding3">
@@ -5358,10 +5016,10 @@
         <div class="aximo-section-title center">
           <h2>
             <span class="aximo-title-animation">
-              <span data-website-translate="faqTitle">These FAQs help</span>
+              <span data-website-translate="faqTitle">Questions you're</span>
               <span class="aximo-title-icon"></span>
             </span>
-            <span data-website-translate="faqSubtitle">clients learn about us</span>
+            <span data-website-translate="faqSubtitle">asking right now</span>
           </h2>
         </div>
         <div class="aximo-accordion-wrap wow fadeInUpX" data-wow-delay="0.1s" id="aximo-accordion">
@@ -5369,13 +5027,11 @@
           <!-- FAQ 1 -->
           <div class="aximo-accordion-item open">
             <div class="aximo-accordion-header">
-              <h3 data-website-translate="faqQuestion1">What services does New Visions offer?</h3>
+              <h3 data-website-translate="faqQuestion1">Do you guarantee results?</h3>
             </div>
             <div class="aximo-accordion-body">
               <p data-website-translate="faqAnswer1">
-                We help e-commerce and local businesses grow with Meta & TikTok ads, conversion-focused websites,
-                cash-on-delivery funnels, branding, and performance strategy. Everything we do is built to generate real
-                sales, not just clicks.
+                Yes. We offer a performance guarantee. If you don't see results in your first month, you get another month of work completely free. Payments are staged or monthly, and you can stop anytime.
               </p>
             </div>
           </div>
@@ -5383,14 +5039,11 @@
           <!-- FAQ 2 -->
           <div class="aximo-accordion-item">
             <div class="aximo-accordion-header">
-              <h3 data-website-translate="faqQuestion2">What industries or types of clients do you typically work with?
-              </h3>
+              <h3 data-website-translate="faqQuestion2">Do you actually know Moroccan COD?</h3>
             </div>
             <div class="aximo-accordion-body">
               <p data-website-translate="faqAnswer2">
-                We mainly work with e-commerce brands and local businesses in fashion, beauty, accessories, and
-                cosmetics. Most of our clients are small to mid-sized businesses in Morocco that use cash on delivery
-                and want to scale with proper ads and websites.
+                Yes. Deeply. We only work with COD stores in Morocco. We know cancellation rates can exceed 30%. We know Moroccan customers respond better to Darija. We know WhatsApp is crucial for confirmations. We know COD margins are tight. That's our specialty.
               </p>
             </div>
           </div>
@@ -5398,13 +5051,11 @@
           <!-- FAQ 3 -->
           <div class="aximo-accordion-item">
             <div class="aximo-accordion-header">
-              <h3 data-website-translate="faqQuestion3">Can you provide examples of your previous work?</h3>
+              <h3 data-website-translate="faqQuestion3">What if I get zero sales after 1 month?</h3>
             </div>
             <div class="aximo-accordion-body">
               <p data-website-translate="faqAnswer3">
-                Yes. We've worked with 300+ clients across different niches. You can explore case studies on our website
-                or request a tailored portfolio with results relevant to your business. We're proud to show real
-                numbers, not just pretty designs.
+                If you get ZERO sales after 1 month with our system, you get another month free. Period. But let's be honest: if your product has zero demand, even the best system won't create magic. That's why we always start with an audit. If we see potential, we work together. If not, we tell you straight up.
               </p>
             </div>
           </div>
@@ -5412,13 +5063,11 @@
           <!-- FAQ 4 -->
           <div class="aximo-accordion-item">
             <div class="aximo-accordion-header">
-              <h3 data-website-translate="faqQuestion4">How do you handle revisions and feedback during a project?</h3>
+              <h3 data-website-translate="faqQuestion4">How much does this actually cost?</h3>
             </div>
             <div class="aximo-accordion-body">
               <p data-website-translate="faqAnswer4">
-                Our process starts with analyzing your brand and problems. We then share a clear action plan and keep
-                you updated. Your feedback is integrated at every step so the final result meets your goals and delivers
-                measurable growth.
+                It depends on your situation. We have 3 packages: UNBLOCK (for stores that are stuck), STANDARD (for clean launches), and VIP (full partnership). Start with the free audit. We'll propose the right solution without selling you stuff you don't need.
               </p>
             </div>
           </div>
@@ -5426,13 +5075,11 @@
           <!-- FAQ 5 -->
           <div class="aximo-accordion-item">
             <div class="aximo-accordion-header">
-              <h3 data-website-translate="faqQuestion5">Do you offer ongoing support after project completion?</h3>
+              <h3 data-website-translate="faqQuestion5">Do you work with stores like mine?</h3>
             </div>
             <div class="aximo-accordion-body">
               <p data-website-translate="faqAnswer5">
-                Yes. We don't just launch your ads or website and disappear — we provide ongoing support, optimization,
-                and monthly growth management. Our goal is to keep scaling your results over time, not just deliver a
-                one-off project.
+                Probably. We've worked with 450+ COD stores in Morocco. Fashion, beauty, accessories, cosmetics, supplements. If you sell via COD in Morocco, we've seen your case. We can show you concrete examples of similar stores that scaled with us.
               </p>
             </div>
           </div>
@@ -5452,13 +5099,11 @@
             <div class="aximo-default-content light position-relative">
               <h2>
                 <span class="aximo-title-animation" data-website-translate="footerTitle">
-                  Let's launch a
+                  Let's work together
                 </span>
-                <span data-website-translate="footerTitleSpan">project together</span>
+                <span data-website-translate="footerTitleSpan">on your store</span>
               </h2>
-              <p data-website-translate="footerDescription">We work closely with our clients to understand their goals,
-                target audience and unique needs. We use our creative skills to translate these requirements into
-                practical design solutions.</p>
+              <p data-website-translate="footerDescription">Tell us about your business. What's stuck? What's not working? We'll figure it out together. We've done this for 450+ stores. We can do it for you too.</p>
               <div class="aximo-info-wrap">
                 <div class="aximo-info">
                   <ul>
@@ -5512,8 +5157,8 @@
                   </div>
                   <h4
                     style="color: #FFFFFF; font-size: clamp(20px, 5vw, 24px); font-weight: 800; margin-bottom: 15px; font-family: 'Syne', sans-serif; line-height: 1.3;"
-                    data-website-translate="footerTitle">
-                    Ready to scale your business?
+                    data-website-translate="footerCTATitle">
+                    Ready to fix your sales?
                   </h4>
                   <p
                     style="color: rgba(255, 255, 255, 0.8); font-size: clamp(16px, 3vw, 18px); line-height: 1.7; margin-bottom: 30px;">
