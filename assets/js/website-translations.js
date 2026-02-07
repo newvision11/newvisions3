@@ -9,8 +9,8 @@ const websiteTranslations = {
     contactUs: "Contact Us",
 
     // Hero section
-    heroTitle: "Stop \"boosting\"<br>Start selling.",
-    heroSubtitle: "The 'Boost' button gives you likes, not money. We replace the DIY mess with real ad campaigns built to generate direct sales on your site.",
+    heroTitle: "You're running ads.<br>Where are the <span class=\"gold-gradient-text\">sales?</span>",
+    heroSubtitle: "Clicks, messages, visits — but no consistent orders. We build the system that turns your ad spend into confirmed COD sales.",
     clientsText: "450+ businesses scaled",
     bookConsultation: "Book a free consultation",
 
@@ -59,8 +59,8 @@ const websiteTranslations = {
 
     // CTA Section
     ctaTitle: "Ready to fix your sales problem?",
-    ctaSubtitle: "Tell us about your store. What's stuck? What's not working? Let's figure it out together. No BS. Just real talk about what needs fixing.",
-    ctaButton: "Let's Talk About Your Store",
+    ctaSubtitle: "Tell us about your business and let's start bringing you results.",
+    ctaButton: "Fix My Sales Now",
     startQuizButton: "Start Quiz",
     videoButton: "Watch our video",
 
@@ -123,19 +123,9 @@ const websiteTranslations = {
     webDev: "Web Development",
     webDevDesc: "Creating or refreshing a company's website that fits Its needs.",
 
-    // Portfolio section
-    ourWork: "Our work",
-    ourWorkDesc: "You can find most of our work on our Instagram stories highlights",
-    viewOurWork: "View our work",
-
-    // About section
-    ourHighQuality: "Our high-quality",
-    workingProcesses: "working processes",
-    aboutDesc: "We focus at every stage on effective communication and collaboration between the client and ensuring that the final design meets the client's objectives and expectations.",
-
     // FAQ Section
-    faqTitle: "Questions you're asking",
-    faqSubtitle: "Straight answers to your objections",
+    faqTitle: "Questions you're",
+    faqSubtitle: "asking right now",
     faqQuestion1: "Do you guarantee results?",
     faqAnswer1: "Yes — we offer a performance guarantee. If you don't see results in your first month, you get another month of work completely free. Payments are staged or monthly, and you can stop anytime.",
     faqQuestion2: "Do you actually know Moroccan COD?",
@@ -164,75 +154,72 @@ const websiteTranslations = {
 
     // Additional UI elements
     joinTeam: "Join Team",
-    startQuiz: "Start Quiz",
+    startQuiz: "Get Your Free COD Audit",
     seeMoreFeedback: "See More Feedback on Instagram",
-    yourVisionOurMission: "YOUR VISION, OUR MISSION",
 
     // Quiz CTA Section
-    quizCTATitle: "Ready to transform your COD sales?",
-    quizCTADesc: "Answer 7 quick questions and receive a free personalized audit.",
+    quizCTATitle: "Ready to fix your COD sales?",
+    quizCTADesc: "Answer 7 quick questions. Get a free personalized audit showing exactly what's broken and how to fix it.",
 
     // Problem section
-    problemtitle1: "What you are really experiencing",
-    problemdesc: "The clicks are coming. Sometimes messages. Sometimes visits. But something isn’t right.",
+    problemtitle1: "Sound familiar?",
+    problemdesc: "The clicks come in. Sometimes messages. Sometimes visits. But something isn't right.",
 
+    problemTitle: "You run ads. But the sales don't follow.",
 
-    problemTitle: "You run ads. But sales don’t follow.",
+    problemText1: "People click but don't buy. They visit your site, scroll around, then leave. Or they message you, ask the price, and disappear.",
 
-    problemText1: "You run ads. Clicks come in. Sometimes messages. Sometimes website visits. But deep down, something doesn’t feel right.",
+    problemText2: "Sales are inconsistent. One day it works. The next day, nothing. No pattern. No stability. Just hoping tomorrow will be better.",
 
-    problemText2: "People click, but don’t buy. They visit your site, scroll, then leave. Or they message you, ask for the price, then disappear.",
+    problemText3: "You look at the numbers but they don't tell the full story. Is it the ad? The website? The checkout flow? You're spending money without knowing where it's actually breaking.",
 
-    problemText3: "Sales are inconsistent. One day it works. The next day, nothing. No stability.",
+    problemText4: "It's not a lack of effort. It's a lack of a clear system. Ads. Website. Messages. Delivery. Everything is disconnected. We find exactly where it breaks and fix it.",
 
-    problemText4: "You look at the numbers, but they don’t tell the full story. You’re spending money without knowing whether the issue is the ad, the website, or the flow.",
-
-    problemCTA: "See exactly what’s broken",
+    problemCTA: "Get Your Free COD Audit",
 
     // Services section
     servicesBadge: "SERVICES",
-    servicesTitle: "How We Help You",
-    servicesSubtitle: "We manage your ads, build your site, test TikTok. No theory. Real work that generates orders for your business.",
+    servicesTitle: "How We Help <span style=\"font-style: italic; font-weight: 400;\">You</span>",
+    servicesSubtitle: "We manage your ads, build your store, and test TikTok. No theory. Real work that generates confirmed orders for your business.",
     paidSocialBadge: "Paid Social",
-    metaAdsTitle: "1. Meta Ads (Facebook/Instagram)",
-    metaAdsDesc: "No more \"Boost Post\". We structure your campaigns with a real strategy. We test creatives daily, analyze data and only keep ads that generate real profit for your business. You know exactly where your budget goes.",
+    metaAdsTitle: "Meta Ads",
+    metaAdsDesc: "No more \"Boost Post.\" We structure real campaigns, test creatives daily, and only keep what generates confirmed profit. You know exactly where your budget goes.",
     webExperienceBadge: "Web Experience",
-    highConversionTitle: "2. Optimized Websites (COD)",
-    highConversionDesc: "Your site shouldn't just be pretty, it should sell. We build pages designed specifically for Moroccan psychology: fast, reassuring and optimized for cash on delivery. We eliminate friction to turn visitors into confirmed clients.",
+    highConversionTitle: "High-Conversion Websites",
+    highConversionDesc: "Your site looks nice but doesn't sell. We fix that. Ultra-fast stores with COD checkout, trust signals, and WhatsApp integration that turn visitors into confirmed orders.",
     awarenessBadge: "Awareness",
-    tiktokAdsTitle: "3. TikTok Ads",
-    tiktokAdsDesc: "Capture attention in 3 seconds. TikTok moves fast. We identify viral trends for your niche and launch creatives that stop the scroll. The goal? Bring massive, qualified traffic to your store to scale your results quickly.",
+    tiktokAdsTitle: "TikTok Ads",
+    tiktokAdsDesc: "Reach new audiences fast with native-style creatives that don't feel like ads. We test rapidly, kill what doesn't work, and scale what does.",
 
     // Comparison section
     comparisonBadge: "Comparison",
-    comparisonTitle: "But why work with us?",
-    classicAgenciesTitle: "Classic Agencies",
-    classicAgencies1: "They only execute campaigns, without any real strategy.",
-    classicAgencies2: "Mismanaged dotation (budget/allocation) problems.",
-    classicAgencies3: "Everything manual. Slow. You wait weeks for simple changes.",
-    classicAgencies4: "Zero reporting or analysis on the problems encountered by the ads.",
-    newVisions1: "100% COD e-commerce focused. We know what works in Morocco. $680K spent on ads.",
-    newVisions2: "Payment blocks? We help. We know how to work around. You scale without limits.",
-    newVisions3: "Automated systems. Everything runs itself. You focus on fulfillment.",
-    newVisions4: "Real-time communication. We respond fast. You never wait.",
-    newVisions5: "Focus on cash. Confirmed and delivered orders. No likes.",
+    comparisonTitle: "Why work with <span style=\"font-style: italic;\">us?</span>",
+    classicAgenciesTitle: "Other Agencies",
+    classicAgencies1: "Generalists (Branding & Visibility)",
+    classicAgencies2: "Limited by budget caps & blockages",
+    classicAgencies3: "Focus on Clicks, Likes & Views",
+    classicAgencies4: "Manual and slow processes",
+    newVisions1: "100% Specialized in E-com & COD",
+    newVisions2: "Solutions to scale without blockages",
+    newVisions3: "Focus on Net Profit & ROAS",
+    newVisions4: "Automated & fast systems",
 
     // Process section
-    processBadge: "PROCESS",
-    processTitleFull: "How We Work",
-    filterTitle: "Fix",
-    filterDesc: "Before spending, we audit your business. We find what's blocking sales (offer, site, technical) and fix it to build a solid foundation.",
-    conversionTitle: "Validate",
-    conversionDesc: "We launch precise tests. We're not looking for luck, we're looking for profitability. We cut what fails and improve what converts.",
-    stabilityTitle: "Scale",
-    stabilityDesc: "When the formula works, we accelerate. We increase the budget gradually to multiply orders without breaking the machine.",
+    processBadge: "OUR SYSTEM",
+    processTitleFull: "The 3-Layer Moroccan Funnel",
+    filterTitle: "1. The Filter (Ads)",
+    filterDesc: "We stop targeting \"everyone.\" We use hooks in Darija that qualify real buyers before they even click. We save your budget by filtering out the curious and keeping only buyers who actually confirm.",
+    conversionTitle: "2. The Conversion (Store)",
+    conversionDesc: "No generic templates. We build high-trust pages optimized for COD and Moroccan buying psychology. Darija testimonials, local guarantees, WhatsApp visible everywhere. We maximize confirmed orders, not just clicks.",
+    stabilityTitle: "3. The Stability (Scaling)",
+    stabilityDesc: "We monitor data daily. If a creative dies, we replace it immediately. If confirmations drop, we adjust the WhatsApp scripts. We focus on stable ROAS and real confirmations, not vanity metrics that don't sell anything.",
 
     // Pricing section
-    pricingPack1Title: "Ecom Unblock Pack",
+    pricingPack1Title: "Unblock Pack",
     pricingPack1Price: "",
-    pricingPack1For: "Sellers doing ~5 sales/day with unstable results who need a clear strategy and full follow-up to stabilize their sales.",
+    pricingPack1For: "For stores doing ~5 sales/day with unstable results. You need a clear strategy and full management to stabilize and grow.",
     pricingPack1What: "What we do:",
-    pricingPack1Feature1: "Personalized media plan (Meta or TikTok)",
+    pricingPack1Feature1: "Custom media plan (Meta or TikTok)",
     pricingPack1Feature2: "Daily optimization & scaling",
     pricingPack1Feature3: "Full ad management for 1 month",
     pricingPack1Goal: "",
@@ -241,24 +228,24 @@ const websiteTranslations = {
 
     pricingPack2Title: "Standard Package",
     pricingPack2Price: "",
-    pricingPack2For: "Sellers without a solid base wanting a conversion-optimized site, clean ad structure, and a system to start generating predictable sales.",
-    pricingPack2Feature1: "Full conversion-optimized e-commerce site",
-    pricingPack2Feature2: "Hosting and domain (.ma .com…)",
-    pricingPack2Feature3: "Professional design and copywriting",
+    pricingPack2For: "For stores without a solid foundation. You need a conversion-optimized site, clean ad structure, and a system that generates predictable sales.",
+    pricingPack2Feature1: "Full e-com site optimized for conversions",
+    pricingPack2Feature2: "Hosting + domain (.ma, .com...)",
+    pricingPack2Feature3: "Professional design & copywriting",
     pricingPack2Feature4: "Meta Ads setup (1 month of campaigns)",
     pricingPack2Goal: "",
     pricingPack2CTA: "Check Eligibility",
 
     pricingPack3Title: "Full Build & Scale — VIP Partnership",
     pricingPack3Price: "",
-    pricingPack3For: "Investors or beginners who want to launch a complete business with strategic support and full execution.",
-    pricingPack3Feature1: "Full conversion-optimized e-commerce site",
-    pricingPack3Feature2: "Hosting and domain (.ma .com…)",
-    pricingPack3Feature3: "Professional design and copywriting",
+    pricingPack3For: "For investors or beginners who want to launch a complete business with strategic guidance and total execution.",
+    pricingPack3Feature1: "Full e-com site optimized for conversions",
+    pricingPack3Feature2: "Hosting + domain (.ma, .com...)",
+    pricingPack3Feature3: "Professional design & copywriting",
     pricingPack3Feature4: "Full ad management for 3 months",
     pricingPack3Feature5: "Advanced retargeting to maximize conversions",
-    pricingPack3Feature6: "1:1 consultation for planning and growth strategy",
-    pricingPack3Feature7: "Automation for WhatsApp, website and delivery company",
+    pricingPack3Feature6: "1-on-1 strategy consultation & growth planning",
+    pricingPack3Feature7: "WhatsApp, website & delivery automation",
     pricingPack3Goal: "",
     pricingPack3CTA: "Check Eligibility",
 
@@ -271,7 +258,7 @@ const websiteTranslations = {
     videoTestimonialsTitle: "They Were Exactly in Your Place",
 
     // Pricing badges
-    mostPopular: "⭐ Recommended",
+    mostPopular: "Most Popular",
 
     // Page title
     pageTitle: "New Visions Agency | Digital Marketing Agency Morocco"
@@ -288,8 +275,8 @@ const websiteTranslations = {
     contactUs: "Contactez-nous",
 
     // Hero section
-    heroTitle: "Arrêtez de 'Booster'. Commencez à Vendre.",
-    heroSubtitle: "Le bouton 'Booster' vous apporte des likes, pas de l'argent. Nous remplaçons le bricolage par de vraies campagnes publicitaires structurées pour générer des achats directs sur votre site.",
+    heroTitle: "Vous lancez des pubs.<br>Où sont les <span class=\"gold-gradient-text\">ventes ?</span>",
+    heroSubtitle: "Des clics, des messages, des visites — mais pas de commandes régulières. On construit le système qui transforme vos dépenses pub en ventes COD confirmées.",
     clientsText: "450+ businesses scaled",
     startQuiz: "Obtenez votre audit COD gratuit",
     heroCTA: "Obtenez votre audit COD gratuit",
@@ -314,25 +301,17 @@ const websiteTranslations = {
     whyChooseTitle: "Pourquoi choisir New Visions?",
     whyChooseDesc: "Regardez cette vidéo pour vous faire une idée des attentes que vous devez avoir avant de travailler ensemble.",
 
-    // Process section - 3-Layer Moroccan Funnel  
+    // Process section - 3-Layer Moroccan Funnel
     processBadge: "NOTRE SYSTÈME",
     processTitle: "Comment nous travaillons",
     processDesc: "Nous n'offrons pas de solutions génériques. Nous identifions précisément votre problème, puis nous vous accompagnons pas à pas vers une croissance rentable.",
-    processTitleFull: "Notre Méthode",
-    filterTitle: "Réparer",
-    filterDesc: "Avant de dépenser, on audit votre business. On trouve ce qui bloque les ventes (offre, site, technique) et on le corrige pour avoir une base solide.",
-    conversionTitle: "Valider",
-    conversionDesc: "On lance des tests précis. On ne cherche pas la chance, on cherche la rentabilité. On coupe ce qui échoue et on améliore ce qui convertit.",
-    stabilityTitle: "Scaler",
-    stabilityDesc: "Quand la formule est gagnante, on accélère. On augmente le budget progressivement pour multiplier les commandes sans casser la machine.",
-    diagnosis: "Diagnostic",
-    diagnosisDesc: "Nous commençons par analyser votre entreprise pour identifier les vrais problèmes qui vous empêchent d'obtenir des ventes constantes.",
-    tailoredPackage: "Package sur mesure",
-    tailoredPackageDesc: "Selon vos besoins, nous recommandons le bon package. Vous confirmez, payez en sécurité, et nous mettons tout en place sans délai.",
-    testingPhase: "Phase de test",
-    testingPhaseDesc: "Nous lançons des campagnes de test avec différents créatifs et stratégies pour voir ce qui fonctionne avec votre audience et apporte des résultats rapidement.",
-    implementation: "Mise en œuvre",
-    implementationDesc: "Nous exécutons tout en vous tenant informé. Pas de surprises, pas de retards — juste des résultats que vous pouvez suivre.",
+    processTitleFull: "Le Funnel Marocain en 3 Couches",
+    filterTitle: "1. Le Filtre (Publicités)",
+    filterDesc: "On arrête de cibler \"tout le monde\". On utilise des accroches en Darija qui qualifient les vrais acheteurs avant même qu'ils cliquent. On économise votre budget en filtrant les curieux et en gardant uniquement les acheteurs qui confirment.",
+    conversionTitle: "2. La Conversion (Boutique)",
+    conversionDesc: "Pas de templates génériques. On construit des pages optimisées COD, à haute confiance, conçues spécifiquement pour la psychologie marocaine. Témoignages en Darija, garanties locales, WhatsApp visible partout. On maximise les commandes confirmées, pas juste les clics.",
+    stabilityTitle: "3. La Stabilité (Scaling)",
+    stabilityDesc: "On surveille les données quotidiennement. Si un créatif meurt, on le remplace immédiatement. Si les confirmations baissent, on ajuste les scripts WhatsApp. On se concentre sur un ROAS stable et des confirmations réelles, pas des métriques de vanité.",
 
     // Services section
     servicesTitle: "Vos ventes bloquent ? Nous réparons et nous faisons croître.",
@@ -444,16 +423,15 @@ const websiteTranslations = {
 
     // Additional UI elements
     joinTeam: "Join Team",
-    startQuiz: "Commencer le Quiz",
+    startQuiz: "Obtenez votre audit COD gratuit",
     seeMoreFeedback: "Voir nos clients",
-    yourVisionOurMission: "VOTRE VISION, NOTRE MISSION",
 
     // Quiz CTA Section
-    quizCTATitle: "Prêt à transformer vos ventes COD ?",
-    quizCTADesc: "Répondez à 7 questions rapides et recevez un audit personnalisé gratuit.",
+    quizCTATitle: "Prêt à réparer vos ventes COD ?",
+    quizCTADesc: "Répondez à 7 questions rapides. Recevez un audit personnalisé gratuit montrant exactement ce qui ne va pas et comment le corriger.",
 
-    // Problem section - Trust/Scam objection
-    problemtitle1: "Ce que vous vivez vraiment",
+    // Problem section
+    problemtitle1: "Ça vous parle ?",
     problemdesc: "Les clics arrivent. Parfois des messages. Parfois des visites. Mais quelque chose ne tourne pas rond.",
 
     problemTitle: "Vous lancez des publicités. Mais les ventes ne suivent pas.",
@@ -485,27 +463,16 @@ const websiteTranslations = {
 
     // Comparison section
     comparisonBadge: "Comparaison",
-    comparisonTitle: "Mais pourquoi travailler avec nous?",
-    classicAgenciesTitle: "Les Agences Classiques",
-    classicAgencies1: "Exécutent seulement les campagnes, sans aucune stratégie réelle.",
-    classicAgencies2: "Blocages de paiement? Ton problème. Tu es seul.",
-    classicAgencies3: "Tout manuel. Lent. Tu attends des semaines pour des changements simples.",
-    classicAgencies4: "Zéro compte-rendu ou analyse sur les problèmes rencontrés par les publicités..",
-    newVisions1: "100% focus e-commerce COD. On sait ce qui marche au Maroc.",
-    newVisions2: "Blocages de paiement? On aide. On sait contourner. Tu scales sans limites.",
-    newVisions3: "Systèmes automatisés. Tout tourne tout seul. Tu te concentres sur la livraison.",
-    newVisions4: "Communication en temps réel. On répond vite. Tu attends jamais.",
-    newVisions5: "Focus sur le cash. Commandes confirmées et livrées. Pas de likes.",
-
-    // Process section
-    processBadge: "PROCESSUS",
-    processTitleFull: "L'Notre Méthode",
-    filterTitle: "Le Filtre (Publicités)",
-    filterDesc: "Nous n'offrons pas de solutions génériques. Nous identifions précisément votre problème, puis nous vous accompagnons pas à pas vers une croissance rentable..",
-    conversionTitle: "La Conversion (Boutique)",
-    conversionDesc: "Pas de templates génériques. On construit des pages optimisées COD, à haute confiance, conçues spécifiquement pour la psychologie marocaine.",
-    stabilityTitle: "Scaling",
-    stabilityDesc: "On surveille les données quotidiennement. Si un créatif meurt, on le remplace. On se concentre sur la stabilité du ROAS, pas seulement sur les likes de vanité.",
+    comparisonTitle: "Pourquoi travailler avec <span style=\"font-style: italic;\">nous ?</span>",
+    classicAgenciesTitle: "Autres Agences",
+    classicAgencies1: "Généralistes (Branding & Visibilité)",
+    classicAgencies2: "Limités par les plafonds de budget & blocages",
+    classicAgencies3: "Focus sur les Clics, Likes & Vues",
+    classicAgencies4: "Processus manuels et lents",
+    newVisions1: "100% Spécialisé E-com & COD",
+    newVisions2: "Solutions pour scaler sans blocages",
+    newVisions3: "Focus sur le Profit Net & ROAS",
+    newVisions4: "Systèmes automatisés & rapides",
 
     // Pricing section
     pricingPack1Title: "Pack Déblocage Ecom",
